@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Agness | My Inamorata</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, serif;
+            background: #100d16;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 25px;
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 500px;
+            width: 100%;
+            padding: 35px 20px;
+            border: 1px solid #b58a6a;
+            border-radius: 20px;
+            background: linear-gradient(
+                145deg,
+                #241727,
+                #100d16
+            );
+            box-shadow: 0 0 40px #b58a6a22;
+            position: relative;
+            z-index: 1;
+        }
+
+        .small-title {
+            color: #d6ad8c;
+            letter-spacing: 5px;
+            font-size: 11px;
+            margin-bottom: 30px;
+        }
+
+        .heart {
+            font-size: 48px;
+            color: #e8a2b2;
+            margin-bottom: 20px;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: normal;
+            margin-bottom: 12px;
+        }
+
+        .subtitle {
+            color: #d6ad8c;
+            font-style: italic;
+            font-size: 19px;
+            margin-bottom: 25px;
+        }
+
+        .message {
+            color: #ded5df;
+            line-height: 1.8;
+            font-size: 15px;
+            margin-bottom: 30px;
+        }
+
+        button {
+            background: #c69b83;
+            color: #170f17;
+            border: none;
+            padding: 15px 28px;
+            border-radius: 30px;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:active {
+            transform: scale(0.96);
+        }
+
+        #surprise {
+            display: none;
+            margin-top: 25px;
+            color: #f0c5d0;
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        .footer {
+            margin-top: 35px;
+            color: #a99aa8;
+            font-size: 11px;
+            letter-spacing: 2px;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .sparkle {
+            position: fixed;
+            color: #e8a2b2;
+            opacity: 0.5;
+            animation: float 6s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            from {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(-10vh);
+                opacity: 0.7;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <p class="small-title">A LITTLE WORLD FOR YOU</p>
+
+        <div class="heart">♥</div>
+
+        <h1>Agness</h1>
+
+        <p class="subtitle">My Inamorata</p>
+
+        <p class="message">
+            Some people make ordinary moments
+            feel extraordinary.
+
+            And somehow, you have become
+            one of my favourite parts of life.
+        </p>
+
+        <button onclick="showSurprise()">
+            Open Your Surprise ♥
+        </button>
+
+        <div id="surprise">
+            If I could create a thousand beautiful
+            things, I would still choose to create
+            something that reminds you how special
+            you are to me.
+
+            <br><br>
+            With love, always. ❤️
+        </div>
+
+        <p class="footer">
+            MADE WITH LOVE · JUST FOR YOU
+        </p>
+
+    </div>
+
+    <script>
+        function showSurprise() {
+            document.getElementById("surprise")
+                .style.display = "block";
+        }
+
+        function createSparkle() {
+            const sparkle = document.createElement("div");
+
+            sparkle.className = "sparkle";
+            sparkle.innerHTML = "✦";
+
+            sparkle.style.left = Math.random() * 100 + "vw";
+            sparkle.style.animationDuration =
+                (4 + Math.random() * 5) + "s";
+
+            document.body.appendChild(sparkle);
+
+            setTimeout(() => {
+                sparkle.remove();
+            }, 9000);
+        }
+
+        setInterval(createSparkle, 700);
+    </script>
+
+</body>
+</html>
