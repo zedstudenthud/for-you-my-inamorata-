@@ -1,0 +1,337 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Agness | A Letter From My Heart</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background: #100d16;
+    color: #f5eaf0;
+    min-height: 100vh;
+    padding: 35px 18px;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 550px;
+    margin: 25px auto;
+    padding: 40px 25px;
+    border: 1px solid #b58a6a;
+    border-radius: 25px;
+    background: linear-gradient(145deg,#29182a,#100d16);
+    box-shadow: 0 0 45px #e8a2b222;
+    position: relative;
+    z-index: 1;
+    animation: appear 2s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.top {
+    color: #d6ad8c;
+    letter-spacing: 5px;
+    font-size: 11px;
+    margin-bottom: 35px;
+}
+
+.big-heart {
+    color: #efa5bb;
+    font-size: 65px;
+    animation: heartbeat 1.5s infinite;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-weight: normal;
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #d6ad8c;
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+.divider {
+    color: #d6ad8c;
+    letter-spacing: 10px;
+    margin: 30px 0;
+}
+
+.letter {
+    text-align: left;
+    color: #e6dce5;
+    line-height: 2;
+    font-size: 16px;
+}
+
+.letter p {
+    margin-bottom: 23px;
+}
+
+.highlight {
+    color: #f1b5c9;
+    font-style: italic;
+}
+
+.signature {
+    text-align: right;
+    color: #d6ad8c;
+    font-style: italic;
+    font-size: 19px;
+    margin-top: 35px;
+}
+
+.music-button {
+    background: #c69b83;
+    color: #170f17;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 30px;
+    margin: 25px 0;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.music-note {
+    font-size: 12px;
+    color: #bda8b8;
+    margin-bottom: 15px;
+}
+
+.footer {
+    margin-top: 40px;
+    font-size: 11px;
+    color: #a99aa8;
+    letter-spacing: 2px;
+}
+
+.floating-heart {
+    position: fixed;
+    bottom: -40px;
+    color: #e8a2b2;
+    pointer-events: none;
+    animation: floatUp 8s linear forwards;
+    z-index: 0;
+}
+
+@keyframes heartbeat {
+    0%,100% {transform:scale(1);}
+    50% {transform:scale(1.2);}
+}
+
+@keyframes floatUp {
+    to {
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+@media(max-width:400px) {
+    .container {
+        padding: 35px 20px;
+    }
+
+    h1 {
+        font-size: 35px;
+    }
+
+    .letter {
+        font-size: 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <p class="top">A LETTER FROM MY HEART</p>
+
+    <div class="big-heart">♥</div>
+
+    <h1>My Dearest Agness</h1>
+
+    <p class="subtitle">My Inamorata, My Beautiful Thought</p>
+
+    <div class="divider">✦ ♥ ✦</div>
+
+    <div class="letter">
+
+        <p>My Dearest Agness,</p>
+
+        <p>
+        I don't know if words will ever be enough
+        to explain what you mean to me, but
+        I wanted to try.
+        </p>
+
+        <p>
+        There is something beautiful about having
+        someone whose presence can make an
+        ordinary day feel a little more meaningful.
+        Somehow, you have become that person
+        to me.
+        </p>
+
+        <p>
+        I may not always have the perfect words,
+        and I may not always know how to express
+        everything I feel, but I hope you never
+        doubt that you hold a special place in my heart.
+        </p>
+
+        <p class="highlight">
+        If life were a book, I would not ask for
+        every chapter to be perfect. I would simply
+        be grateful if some of its most beautiful
+        pages had you in them.
+        </p>
+
+        <p>
+        I created this little world not because
+        a website could ever capture how special
+        you are, but because I wanted to give you
+        something that carries a little piece of my heart.
+        </p>
+
+        <p>
+        So whenever you visit this page, remember
+        that somewhere, someone is smiling simply
+        because you exist.
+        </p>
+
+        <p>
+        Thank you for being you, Agness.
+        You are a beautiful part of my story.
+        </p>
+
+    </div>
+
+    <div class="divider">♥ ✦ ♥</div>
+
+    <div class="signature">
+        With affection, always.<br>
+        Someone who thinks the world of you. ❤️
+    </div>
+
+    <button class="music-button" id="musicButton"
+    onclick="toggleMusic()">
+        ♫ Play Our Music
+    </button>
+
+    <p class="music-note" id="musicStatus">
+        A little melody to accompany this letter.
+    </p>
+
+    <audio id="backgroundMusic" loop preload="auto">
+        <source src="romantic.mp3" type="audio/mpeg">
+    </audio>
+
+    <p class="footer">
+        MADE WITH LOVE · JUST FOR AGNESS
+    </p>
+
+</div>
+
+<script>
+const music = document.getElementById("backgroundMusic");
+const musicButton = document.getElementById("musicButton");
+const musicStatus = document.getElementById("musicStatus");
+
+let playing = false;
+
+// Try automatic playback when the page opens.
+window.addEventListener("load", () => {
+    music.play().then(() => {
+        playing = true;
+        updateMusicButton();
+    }).catch(() => {
+        musicStatus.textContent =
+        "Tap below to hear the music.";
+    });
+});
+
+function toggleMusic() {
+    if (playing) {
+        music.pause();
+        playing = false;
+    } else {
+        music.play().then(() => {
+            playing = true;
+            updateMusicButton();
+        }).catch(() => {
+            musicStatus.textContent =
+            "Music could not play. Please check the audio file.";
+        });
+    }
+
+    updateMusicButton();
+}
+
+function updateMusicButton() {
+    musicButton.textContent = playing
+        ? "Ⅱ Pause Music"
+        : "♫ Play Our Music";
+
+    musicStatus.textContent = playing
+        ? "Playing a little melody for you. ♥"
+        : "A little melody to accompany this letter.";
+}
+
+music.addEventListener("pause", () => {
+    playing = false;
+    updateMusicButton();
+});
+
+music.addEventListener("play", () => {
+    playing = true;
+    updateMusicButton();
+});
+
+// Floating hearts
+function createHeart() {
+    const heart = document.createElement("div");
+
+    heart.className = "floating-heart";
+    heart.innerHTML = Math.random() > 0.5 ? "♥" : "♡";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (15 + Math.random() * 25) + "px";
+    heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 10000);
+}
+
+setInterval(createHeart, 800);
+</script>
+
+</body>
+</html>
